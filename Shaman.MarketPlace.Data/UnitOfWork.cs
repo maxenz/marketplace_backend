@@ -7,18 +7,26 @@ namespace Shaman.MarketPlace.Data
 {
     public class UnitOfWork : IDisposable
     {
-        private readonly BoilerplateDbContext _context;
+        #region Properties
 
+        private readonly MarketPlaceDbContext _context;
+
+        #endregion
+
+        #region Constructors
         public UnitOfWork()
         {
-            _context = new BoilerplateDbContext();
+            _context = new MarketPlaceDbContext();
         }
 
-        public UnitOfWork(BoilerplateDbContext context)
+        public UnitOfWork(MarketPlaceDbContext context)
         {
             _context = context;
         }
 
+        #endregion
+
+        #region General Methods
         public void SaveChanges()
         {
             _context.SaveChanges();
@@ -48,6 +56,9 @@ namespace Shaman.MarketPlace.Data
             Dispose(true);
             GC.SuppressFinalize(this);
         }
+        #endregion
+
+        #region Articles Repository
 
         private Repository<Article> _articleRepository;
 
@@ -55,5 +66,16 @@ namespace Shaman.MarketPlace.Data
         {
             get { return _articleRepository ?? (_articleRepository = new Repository<Article>(_context)); }
         }
+
+        #endregion
+
+        #region Tickets Repository
+        private Repository<Ticket> _ticketRepository;
+        public Repository<Ticket> TicketRepository
+        {
+            get { return _ticketRepository ?? (_ticketRepository = new Repository<Ticket>(_context)); }
+        }
+        #endregion
+
     }
 }

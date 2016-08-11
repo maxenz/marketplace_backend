@@ -52,7 +52,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Configuration\EntityFramework\BoilerplateDbContext.cs" />
+    <Compile Include="Configuration\EntityFramework\MarketPlaceDbContext.cs" />
     <Compile Include="Configuration\DbInitializer.cs" />
     <Compile Include="Interfaces\Repositories\IRepository.cs" />
     <Compile Include="Repository.cs" />

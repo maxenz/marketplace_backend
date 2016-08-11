@@ -3,6 +3,7 @@ using System.Web.Mvc;
 using Shaman.MarketPlace.Models.Interfaces;
 using System;
 using Newtonsoft.Json;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Shaman.MarketPlace.Models
 {

@@ -6,17 +6,25 @@ using System.Linq;
 
 namespace Shaman.MarketPlace.Data.Configuration.EntityFramework
 {
-    public class BoilerplateDbContext : DbContext
+    public class MarketPlaceDbContext : DbContext
     {
-        public BoilerplateDbContext()
-            : base("Shaman.BoilerplateDb")
+
+        #region Constructors
+
+        public MarketPlaceDbContext()
+    : base("Shaman.MarketPlace")
         {
         }
 
-        static BoilerplateDbContext()
+        static MarketPlaceDbContext()
         {
             Database.SetInitializer(new DbInitializer());
+
         }
+
+        #endregion
+
+        #region General Methods
 
         private void SetDateProperties()
         {
@@ -43,11 +51,21 @@ namespace Shaman.MarketPlace.Data.Configuration.EntityFramework
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
+            //modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
 
-            modelBuilder.Entity<Article>().Property(a => a.CreatedDate).HasColumnType("datetime2").HasPrecision(0);
-            modelBuilder.Entity<Article>().Property(a => a.ModifiedDate).HasColumnType("datetime2").HasPrecision(0);
-            modelBuilder.Entity<Article>().Property(a => a.PublishedDate).HasColumnType("datetime2").HasPrecision(0);
+            //modelBuilder.Entity<Article>().Property(a => a.CreatedDate).HasColumnType("datetime2").HasPrecision(0);
+            //modelBuilder.Entity<Article>().Property(a => a.ModifiedDate).HasColumnType("datetime2").HasPrecision(0);
+            //modelBuilder.Entity<Article>().Property(a => a.PublishedDate).HasColumnType("datetime2").HasPrecision(0);
         }
+
+        #endregion
+
+        #region DbSets
+
+        public DbSet<Article> Articles { get; set; }
+        public DbSet<Ticket> Tickets { get; set; }
+
+        #endregion
+
     }
 }

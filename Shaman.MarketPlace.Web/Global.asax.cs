@@ -1,6 +1,8 @@
 ﻿using System.Web.Http;
 using System.Web.Mvc;
 using Shaman.MarketPlace.Web.App_Start;
+using Shaman.MarketPlace.Data.Configuration.EntityFramework;
+using Shaman.MarketPlace.Data.Configuration;
 
 namespace Shaman.MarketPlace.Web
 {
@@ -10,6 +12,11 @@ namespace Shaman.MarketPlace.Web
         {
             GlobalConfiguration.Configure(WebApiConfig.Register);
             AreaRegistration.RegisterAllAreas();
+            using (var ctx = new MarketPlaceDbContext())
+            {
+                new DbInitializer().InitializeDatabase(ctx);
+            }
+
         }
     }
 }

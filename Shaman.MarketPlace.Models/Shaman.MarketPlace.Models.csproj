@@ -73,9 +73,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Article.cs" />
+    <Compile Include="Models\Article.cs" />
     <Compile Include="Interfaces\IContent.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Models\Ticket.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
