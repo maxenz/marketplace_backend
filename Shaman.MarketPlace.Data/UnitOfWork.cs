@@ -1,5 +1,6 @@
 ﻿using Shaman.MarketPlace.Data.Configuration.EntityFramework;
 using Shaman.MarketPlace.Models;
+using Shaman.MarketPlace.Models.Models;
 using System;
 using System.Threading.Tasks;
 
@@ -75,6 +76,17 @@ namespace Shaman.MarketPlace.Data
         {
             get { return _ticketRepository ?? (_ticketRepository = new Repository<Ticket>(_context)); }
         }
+        #endregion
+
+        #region Users Repository
+
+        private AuthRepository _userRepository;
+
+        public AuthRepository UserRepository
+        {
+            get { return _userRepository ?? (_userRepository = new AuthRepository()); }
+        }
+
         #endregion
 
     }

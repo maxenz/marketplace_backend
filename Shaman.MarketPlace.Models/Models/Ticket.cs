@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Shaman.MarketPlace.Models
+namespace Shaman.MarketPlace.Models.Models
 {
     public class Ticket : IContent
     {

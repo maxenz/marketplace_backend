@@ -5,7 +5,7 @@ using System;
 using Newtonsoft.Json;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Shaman.MarketPlace.Models
+namespace Shaman.MarketPlace.Models.Models
 {
     public class Article : IContent
     {

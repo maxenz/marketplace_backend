@@ -1,4 +1,5 @@
 ﻿using Shaman.MarketPlace.Models;
+using Shaman.MarketPlace.Models.Models;
 using System;
 using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
@@ -14,6 +15,8 @@ namespace Shaman.MarketPlace.Data.Configuration.EntityFramework
         public MarketPlaceDbContext()
     : base("Shaman.MarketPlace")
         {
+            this.Configuration.LazyLoadingEnabled = false;
+            this.Configuration.ProxyCreationEnabled = false;
         }
 
         static MarketPlaceDbContext()

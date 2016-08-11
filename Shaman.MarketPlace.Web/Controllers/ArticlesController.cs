@@ -8,6 +8,7 @@ using System.Net;
 using System.Threading.Tasks;
 using System.Web.Http;
 using System.Web.Http.Description;
+using Shaman.MarketPlace.Models.Models;
 
 namespace Shaman.MarketPlace.Web.Controllers
 {
