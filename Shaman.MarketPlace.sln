@@ -14,7 +14,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{E35204
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shaman.MarketPlace.Tests", "Shaman.MarketPlace.Tests\Shaman.MarketPlace.Tests.csproj", "{FFDD740A-A430-4261-BBBD-268116942283}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shaman.MarketPlace.Models", "Shaman.MarketPlace.Models\Shaman.MarketPlace.Models.csproj", "{C4F852EF-C178-496F-AF52-1D9B299ACCCC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shaman.MarketPlace.Domain", "Shaman.MarketPlace.Domain\Shaman.MarketPlace.Domain.csproj", "{C4F852EF-C178-496F-AF52-1D9B299ACCCC}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shaman.MarketPlace.Data", "Shaman.MarketPlace.Data\Shaman.MarketPlace.Data.csproj", "{59CBA718-69E9-4C24-9A1A-D899DF41FC70}"
 EndProject

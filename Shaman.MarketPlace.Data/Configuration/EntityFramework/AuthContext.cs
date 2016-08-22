@@ -1,18 +1,22 @@
 ﻿using Microsoft.AspNet.Identity.EntityFramework;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Shaman.MarketPlace.Domain.DTOS;
+using System.Data.Entity;
 
 namespace Shaman.MarketPlace.Data.Configuration.EntityFramework
 {
-    public class AuthContext : IdentityDbContext<IdentityUser>
+    public class AuthContext : IdentityDbContext<ApplicationUser>
     {
+
         public AuthContext()
             : base("Shaman.MarketPlace")
         {
 
+        }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+           
         }
     }
 }

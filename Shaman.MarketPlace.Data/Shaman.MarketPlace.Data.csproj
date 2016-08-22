@@ -100,9 +100,9 @@
     <Compile Include="UnitOfWork.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Shaman.MarketPlace.Models\Shaman.MarketPlace.Models.csproj">
+    <ProjectReference Include="..\Shaman.MarketPlace.Domain\Shaman.MarketPlace.Domain.csproj">
       <Project>{c4f852ef-c178-496f-af52-1d9b299acccc}</Project>
-      <Name>Shaman.MarketPlace.Models</Name>
+      <Name>Shaman.MarketPlace.Domain</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

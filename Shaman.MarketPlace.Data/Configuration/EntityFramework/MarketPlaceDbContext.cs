@@ -1,5 +1,5 @@
-﻿using Shaman.MarketPlace.Models;
-using Shaman.MarketPlace.Models.Models;
+﻿using Shaman.MarketPlace.Domain.DTOS;
+using Shaman.MarketPlace.Domain.Models;
 using System;
 using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
@@ -55,7 +55,7 @@ namespace Shaman.MarketPlace.Data.Configuration.EntityFramework
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             //modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
-
+            base.OnModelCreating(modelBuilder);
             //modelBuilder.Entity<Article>().Property(a => a.CreatedDate).HasColumnType("datetime2").HasPrecision(0);
             //modelBuilder.Entity<Article>().Property(a => a.ModifiedDate).HasColumnType("datetime2").HasPrecision(0);
             //modelBuilder.Entity<Article>().Property(a => a.PublishedDate).HasColumnType("datetime2").HasPrecision(0);
@@ -64,9 +64,9 @@ namespace Shaman.MarketPlace.Data.Configuration.EntityFramework
         #endregion
 
         #region DbSets
+        public DbSet<Case> Cases { get; set; }
 
-        public DbSet<Article> Articles { get; set; }
-        public DbSet<Ticket> Tickets { get; set; }
+        public DbSet<Message> Messages { get; set; }
 
         #endregion
 

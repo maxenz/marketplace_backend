@@ -1,6 +1,5 @@
 ﻿using Shaman.MarketPlace.Data.Configuration.EntityFramework;
-using Shaman.MarketPlace.Models;
-using Shaman.MarketPlace.Models.Models;
+using Shaman.MarketPlace.Domain.Models;
 using System;
 using System.Threading.Tasks;
 
@@ -59,22 +58,19 @@ namespace Shaman.MarketPlace.Data
         }
         #endregion
 
-        #region Articles Repository
-
-        private Repository<Article> _articleRepository;
-
-        public Repository<Article> ArticleRepository
+        #region Cases Repository
+        private Repository<Case> _caseRepository;
+        public Repository<Case> CaseRepository
         {
-            get { return _articleRepository ?? (_articleRepository = new Repository<Article>(_context)); }
+            get { return _caseRepository ?? (_caseRepository = new Repository<Case>(_context)); }
         }
-
         #endregion
 
-        #region Tickets Repository
-        private Repository<Ticket> _ticketRepository;
-        public Repository<Ticket> TicketRepository
+        #region Messages Repository
+        private Repository<Message> _messageRepository;
+        public Repository<Message> MessageRepository
         {
-            get { return _ticketRepository ?? (_ticketRepository = new Repository<Ticket>(_context)); }
+            get { return _messageRepository ?? (_messageRepository = new Repository<Message>(_context)); }
         }
         #endregion
 

@@ -1,8 +1,7 @@
 ﻿using Microsoft.AspNet.Identity;
 using Ninject;
 using Shaman.MarketPlace.Data;
-using Shaman.MarketPlace.Models.DTOS;
-using Shaman.MarketPlace.Models.Models;
+using Shaman.MarketPlace.Domain.DTOS;
 using Shaman.MarketPlace.Web.CORS;
 using System.Threading.Tasks;
 using System.Web.Http;
@@ -19,7 +18,7 @@ namespace Shaman.MarketPlace.Web.Controllers
         // POST api/Account/Register
         [AllowAnonymous]
         [Route("Register")]
-        public async Task<IHttpActionResult> Register(UserModel userModel)
+        public async Task<IHttpActionResult> Register(ApplicationUser userModel)
         {
             if (!ModelState.IsValid)
             {

@@ -1,10 +1,8 @@
 ﻿using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Shaman.MarketPlace.Data.Configuration.EntityFramework;
-using Shaman.MarketPlace.Models.DTOS;
-using Shaman.MarketPlace.Models.Models;
+using Shaman.MarketPlace.Domain.DTOS;
 using System;
-using System.Data.Entity;
 using System.Threading.Tasks;
 
 namespace Shaman.MarketPlace.Data
@@ -14,29 +12,25 @@ namespace Shaman.MarketPlace.Data
     {
         private AuthContext _ctx;
 
-        private UserManager<IdentityUser> _userManager;
+        private UserManager<ApplicationUser> _userManager;
 
         public AuthRepository()
         {
             _ctx = new AuthContext();
-            _userManager = new UserManager<IdentityUser>(new UserStore<IdentityUser>(_ctx));
+            _userManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(_ctx));
         }
 
-        public async Task<IdentityResult> RegisterUser(UserModel userModel)
+        public async Task<IdentityResult> RegisterUser(ApplicationUser userModel)
         {
-            IdentityUser user = new IdentityUser
-            {
-                UserName = userModel.UserName
-            };
 
-            var result = await _userManager.CreateAsync(user, userModel.Password);
+            var result = await _userManager.CreateAsync(userModel);
 
             return result;
         }
 
-        public async Task<IdentityUser> FindUser(string userName, string password)
+        public async Task<ApplicationUser> FindUser(string userName, string password)
         {
-            IdentityUser user = await _userManager.FindAsync(userName, password);
+            ApplicationUser user = await _userManager.FindAsync(userName, password);
 
             return user;
         }

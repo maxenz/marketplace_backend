@@ -194,7 +194,6 @@
     <Compile Include="App_Start\NinjectWebCommon.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\ArticlesController.cs" />
     <Compile Include="Controllers\OrdersController.cs" />
     <Compile Include="CORS\CustomCORSAttribute.cs" />
     <Compile Include="Global.asax.cs">
@@ -219,9 +218,9 @@
       <Project>{59cba718-69e9-4c24-9a1a-d899df41fc70}</Project>
       <Name>Shaman.MarketPlace.Data</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Shaman.MarketPlace.Models\Shaman.MarketPlace.Models.csproj">
+    <ProjectReference Include="..\Shaman.MarketPlace.Domain\Shaman.MarketPlace.Domain.csproj">
       <Project>{c4f852ef-c178-496f-af52-1d9b299acccc}</Project>
-      <Name>Shaman.MarketPlace.Models</Name>
+      <Name>Shaman.MarketPlace.Domain</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

@@ -26,23 +26,5 @@
             </summary>
             <param name="kernel">The kernel.</param>
         </member>
-        <member name="T:Shaman.MarketPlace.Web.Controllers.ArticlesController">
-            <summary>
-            Get Articles
-            </summary>
-        </member>
-        <member name="M:Shaman.MarketPlace.Web.Controllers.ArticlesController.GetArticles">
-            <summary>
-            Get a list of Articles
-            </summary>
-            <returns>A list of Articles</returns>
-        </member>
-        <member name="M:Shaman.MarketPlace.Web.Controllers.ArticlesController.GetArticle(System.Int32)">
-            <summary>
-            Get a article
-            </summary>
-            <param name="id">Article id</param>
-            <returns>A article</returns>
-        </member>
     </members>
 </doc>
